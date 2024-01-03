@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-func RepoExists() map[string]interface{} {
-	resp, err := http.Get("https://api.github.com/repos/" + os.Getenv("CHECK_ORG") + "/" + os.Getenv("CHECK_REPO"))
+func FileExists() map[string]interface{} {
+	resp, err := http.Get("https://api.github.com/repos/" + os.Getenv("CHECK_ORG") + "/" + os.Getenv("CHECK_REPO")+"/contents")
 	if err != nil {
 		fmt.Println(err)
 		return map[string]interface{}{
@@ -22,6 +22,6 @@ func RepoExists() map[string]interface{} {
 	}
 	return map[string]interface{}{
 		"result": true,
-		"repo_exists" : resp.StatusCode,
+		"file_exists" : resp.StatusCode,
 	}
 }

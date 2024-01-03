@@ -8,7 +8,8 @@ import (
 func main() {
 
 	checks.NewCheck("repo_exists", handlers.RepoExists)
-	checks.NewCheck("repo_content", handlers.RepoContent)
+	checks.NewCheck("file_contains", handlers.FileContains)
+	checks.NewCheck("file_exists", handlers.FileExists)
 
 	checks.RegisterChecks()
 }

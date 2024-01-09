@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 )
-
+//Args:{CHECK_ORG, CHECK_REPO}
 func FileExists() map[string]interface{} {
 	resp, err := http.Get("https://api.github.com/repos/" + os.Getenv("CHECK_ORG") + "/" + os.Getenv("CHECK_REPO")+"/contents")
 	if err != nil {

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"github.com/Enterprise-Automation/check-github-ms/models"
 )
-
+//Args:{CHECK_ORG, CHECK_REPO, CHECK_FILE, CHECK_STRING}
 func FileContains() map[string]interface{} {
 	var FileContains models.FileContains
 
